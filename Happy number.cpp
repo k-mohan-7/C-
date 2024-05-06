@@ -35,3 +35,50 @@ int main()
    }
 
 }
+
+
+
+
+
+#include<iostream>
+using namespace std;
+bool happy(int n)
+{
+  int i,j,k,s;
+  k=n;
+  s=0;
+  while(s!=1)
+  {
+    s=0;
+    while(k>0)
+    {
+      i=k%10;
+      s+=i*i;
+      k/=10;
+    }
+    
+    if(s==n)
+    {
+      return false;
+    }
+    k=s;
+  }
+
+        return true;
+  
+}
+int main()
+{
+  int n,i,j,k;
+  cout<<"Enter the dnumber for happy";
+  cin>>n;
+  if(happy(n))
+  {
+    cout<<"it is Happy";
+
+  }
+  else
+  {
+    cout<<"entered is not happy";
+  }
+}
